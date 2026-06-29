@@ -47,7 +47,9 @@ def load_planner_config(path: str | Path) -> dict:
         ),
         "spatial_resolution_mm": float(planner_section.get("spatialresolution", 40)),
         "target_velocity": float(planner_section.get("targetvelocity", 17)),
-        "target_planning": TargetPlanning(int(planner_section["targetplanning"])),
+        "target_planning": TargetPlanning(
+            int(planner_section.get("targetplanning", TargetPlanning.VELOCITY))
+        ),
         "wind_direction_deg": float(planner_section.get("winddirection", 0)),
     }
 

@@ -10,7 +10,7 @@ readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
 authors = [
-    { name = "J. Irving Vasquez-Gomez" },
+    { name = "Juan Irving Vasquez", email = "jvasquezg@ipn.mx" },
 ]
 keywords = ["uav", "drone", "coverage-path-planning", "survey", "precision-agriculture"]
 classifiers = [
@@ -48,3 +48,9 @@ testpaths = ["tests"]
 [tool.ruff]
 line-length = 100
 target-version = "py310"
+
+[project.urls]
+Homepage = "https://github.com/irvingvasquez/opencoverage"
+Repository = "https://github.com/irvingvasquez/opencoverage"
+Documentation = "https://github.com/irvingvasquez/opencoverage#readme"
+Issues = "https://github.com/irvingvasquez/opencoverage/issues"
