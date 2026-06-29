@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "opencoverage"
+version = "0.2.0"
+description = "Coverage path planning for UAV aerial surveying"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "J. Irving Vasquez-Gomez" },
+]
+keywords = ["uav", "drone", "coverage-path-planning", "survey", "precision-agriculture"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = [
+    "numpy>=1.24",
+    "shapely>=2.0",
+    "pyproj>=3.6",
+]
+
+[project.optional-dependencies]
+gpu = ["cupy-cuda12x>=13.0"]
+dev = ["pytest>=7.0", "ruff>=0.4"]
+
+[project.scripts]
+opencoverage = "opencoverage.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/opencoverage"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/opencoverage", "config", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
