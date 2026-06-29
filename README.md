@@ -1,5 +1,9 @@
 # OpenCoverage
 
+[![PyPI version](https://img.shields.io/pypi/v/opencoverage.svg)](https://pypi.org/project/opencoverage/)
+[![Python versions](https://img.shields.io/pypi/pyversions/opencoverage.svg)](https://pypi.org/project/opencoverage/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Coverage path planning for UAV aerial surveying. OpenCoverage computes waypoint
 flight paths that fully cover a terrain polygon, with support for camera overlap,
 flight constraints, and multiple sweep patterns.
@@ -7,6 +11,28 @@ flight constraints, and multiple sweep patterns.
 Python reimplementation of the original UAV Planning library, using Shapely
 instead of CGAL. CPU execution is the default; optional GPU acceleration via CuPy
 is available for the optimal sweep search.
+
+## Installation
+
+Install from [PyPI](https://pypi.org/project/opencoverage/):
+
+```bash
+pip install opencoverage
+```
+
+Optional GPU support (CuPy):
+
+```bash
+pip install "opencoverage[gpu]"
+```
+
+Development install from source:
+
+```bash
+git clone https://github.com/irvingvasquez/opencoverage.git
+cd opencoverage
+pip install -e ".[dev]"
+```
 
 ## Features
 
@@ -16,18 +42,6 @@ is available for the optimal sweep search.
 - **Input formats**: KML polygons, Mission Planner `.poly` files, INI configuration
 - **Output**: QGroundControl WPL 120 waypoint files
 - **Optional GPU**: CuPy acceleration for optimal sweep angle search
-
-## Installation
-
-```bash
-pip install -e ".[dev]"
-```
-
-Optional GPU support:
-
-```bash
-pip install -e ".[gpu]"
-```
 
 ## Quick start
 
@@ -91,4 +105,4 @@ src/opencoverage/
 
 ## License
 
-MIT License. Copyright (c) J. Irving Vasquez-Gomez.
+MIT License. Copyright (c) Juan Irving Vasquez.
